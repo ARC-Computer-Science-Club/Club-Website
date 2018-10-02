@@ -1,19 +1,6 @@
 <!DOCTYPE HTML>
 <HTML>
-<head>
-  <title>CSC Website-Contact</title>
-</head>
 <body>
-<div class="header">
-  <h2>Computer Science Club</h2>
-  <ul>
-    <li><a href="#" >Home</a></li>
-    <li><a href="#" >Announcements</a></li>
-    <li><a href="#" >Sample Programs</a></li>
-    <li><a href="resources.html" >Other Resources</a></li>
-    <li><a href="contact.html" >Contact</a></li>
-  </ul>
-</div>
 
 <h1>Contact Info</h1>
 
@@ -21,7 +8,40 @@
     <li><a href = "https://discord.gg/q2mfHM5">Discord Invite Code</a></li>
     <li><a href = "https://gitlab.com/ARC_Computer_Science_Club/">Gitlab Group</a></li>
     <li><a href = "mailto:arccomputerscience@gmail.com">Club Email (Not Yet Active)</a></li>
+    <li>Room: Tech Ed 311</li>
+    <li>Meeting Times: Tuesdays and Thursdays 12 PM - 2 PM</li>
 </ul>
+
+<!-Input Headings will eventually appear inside box and disappear once you start typing->
+<form>
+  <fieldset>
+    <legend>Send us a message:</legend>
+    First Name: <br>
+    <input type = "text"
+           name = "firstname">
+    <br>
+    Last Name: <br>
+    <input type = "text"
+           name = "lastname">
+    <br>
+    Subject: <br>
+    <input type = "text"
+           name = "subject">
+    <br>
+    Message: <br>
+    <!- Eliminate resizeable textarea in CSS->
+    <textarea cols = "40"
+              rows = "6"
+              style = "width:300px; height: 100px;"
+              name = "usermessage">
+    </textarea>
+    <br>
+    <input type = "submit"
+           value = "Send">
+ </fieldset>
+</form>
+
+
 
 </body>
 </HTML>
