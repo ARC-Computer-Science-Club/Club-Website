@@ -17,6 +17,7 @@
   },
   "homepage": "https://gitlab.com/ARC_Computer_Science_Club/club_website#readme",
   "dependencies": {
-    "ejs-cli": "^2.0.1"
+    "ejs-cli": "^2.0.1",
+    "express": "^4.16.3"
   }
 }

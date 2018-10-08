@@ -1,0 +1,14 @@
+version: "3"
+services:
+  node:
+    image: "node:carbon"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./:/home/node/app
+    expose:
+      - "8080"
+    ports:
+      - "8080:8080"
+    command: "npm start"
