@@ -1,0 +1,22 @@
+{
+  "name": "club_website",
+  "version": "0.0.1",
+  "description": "Official website for the ARC Computer Science Club",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/ARC_Computer_Science_Club/club_website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/ARC_Computer_Science_Club/club_website/issues"
+  },
+  "homepage": "https://gitlab.com/ARC_Computer_Science_Club/club_website#readme",
+  "dependencies": {
+    "ejs-cli": "^2.0.1"
+  }
+}
