@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+<h1>
+C++ Code Examples:
+</h1>
+
+<p>
+Many examples of of C++ programs which cover concepts taught in classes at American River College.
+</p>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.accordion {
+    background-color: #eee;
+    color: #666;
+    cursor: pointer;
+    padding: 6px;
+    width: 80%;
+    border: none;
+    text-align: left;
+    outline: #555;
+    font-size: 18px;
+    transition: 0.1s;
+}
+
+.active, .accordion:hover {
+    background-color: #bbbb;
+}
+
+.panel {
+    padding: 0 6px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}
+</style>
+
+</head>
+<body>
+
+<button class="accordion">
+
+<button class="accordion">Basic Program Examples</button>
+<div class="panel">
+<p>
+These examples cover simple programs that are written in main().
+
+<h2>
+HELLO WORLD EXAMPLE
+</h2>
+<button id="hellur" onclick="openBlock(&quot;hello&quot;);
+changeHTML(&quot;hellur&quot;,&quot;OPEN&quot;, &quot;CLOSE&quot;)">
+OPEN
+</button>
+
+<div id="hello" style="display:none">
+<code>
+<pre class = "prettyprint">
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int main()
+{
+    cout << "Hello world!" << endl;
+    return 0;
+}
+</pre>
+</code>
+</div>
+
+</p>
+</div>
+
+<button class="accordion">Function Examples</button>
+<div class="panel">
+<p>
+These examples cover how functions can be used in programs.
+
+<h2>
+BASIC FUNCTIONS EXAMPLE
+</h2>
+
+<button id="baseFunc" onclick="openBlock(&quot;myDIV&quot;);
+changeHTML(&quot;baseFunc&quot;,&quot;OPEN&quot;, &quot;CLOSE&quot;)">
+OPEN
+</button>
+
+<div id="myDIV" style="display:none">
+<code>
+<pre class = "prettyprint">
+#include &lt;iostream&gt;
+
+using namespace std;
+
+// void functions don't return anything
+void print(int num[], int len)
+{
+    //Basic loop that we don't want to write repeatedly
+    for(int i = 0; i < len; i++)
+    {
+        cout << num[i] << " ";
+    }
+    cout << endl;
+
+    //we don't need return statements in void functions, but they can be used:
+    return;
+}
+
+//we can initialize functions at the top of the program
+//note how I did not give a name for the int (this is valid code)
+int numSquare(int);
+
+int main()
+{
+    int arr[5] = {1, 2, 3, 4, 5};
+
+    //We now call the print function from up above:
+    print(arr, 5);
+
+    //We need to put return values somewhere
+    int x = numSquare(3);
+    cout << "3^2 = " << x << endl;
+
+    //(also valid):
+    cout << "function(3^2): " << numSquare(3) << endl;
+    return 0;
+}
+
+//now I define the function, but I have to give the int a name
+//anything but void functions need to return data values
+int numSquare(int x)
+{
+    return x*x; //returning an int
+}
+</pre>
+</code>
+</div>
+
+</p>
+</div>
+
+<button class="accordion">Class Examples</button>
+<div class="panel">
+<p>
+These examples cover how classes can be used in programs.
+
+<h2>
+BASIC CLASS EXAMPLE
+</h2>
+
+<button id="classButt" onclick="openBlock(&quot;classes&quot;);
+changeHTML(&quot;classButt&quot;,&quot;OPEN&quot;, &quot;CLOSE&quot;)">
+OPEN
+</button>
+
+<div id="classes" style="display:none">
+<code>
+<pre class = "prettyprint">
+#include &lt;iostream&gt;
+
+using namespace std;
+
+//"change" functions are our setters (they input values to private variables)
+//"get" functions are our getters (they return values)
+class MyClass
+{
+    public:
+        //inline functions
+        //these are declared within the class
+        void changeX(int num) {x = num;}
+        int getX() {return x;}
+        /**
+        *    The "this" keyword gets the class' private variables
+        *    Use this when making parameters in functions
+             that have the same name as class private variables.
+        */
+        void changeName(string name) {this->name = name;}
+        string getName() {return name;}
+    private:
+        int x;
+        string name;
+};
+
+int main()
+{
+    //you have to make objects of classes to use them
+    MyClass person;
+    //you cannot use private variables, only public functions
+    person.changeName("Jill");
+    person.changeX(21);
+
+    cout << person.getName() << " is " << person.getX() << '.' << endl;
+
+    return 0;
+}
+</pre>
+</code>
+</div>
+
+</p>
+</div>
+
+<script>
+//bunch of functions for editing HTML
+//opens and closes a block of HTML
+function openBlock(stwing)
+{
+  var x = document.getElementById(stwing);
+  if (x.style.display == "none") x.style.display = "block";
+  else x.style.display = "none";
+}
+//changes innerHTML of an object
+function changeHTML(stwing, oldInner, inner)
+{
+  var x = document.getElementById(stwing);
+  if(x.innerHTML == inner) x.innerHTML = oldInner;
+  else x.innerHTML = inner;
+}
+
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++)
+{
+    acc[i].addEventListener("click",
+    function() //within the parentheses
+    {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    });
+}
+</script>
+</body>
+</html>
