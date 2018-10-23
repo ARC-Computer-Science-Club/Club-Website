@@ -3,6 +3,14 @@
 <head>
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 
+<h1>
+C++ Code Examples:
+</h1>
+
+<p>
+Many examples of of C++ programs which cover concepts taught in classes at American River College.
+</p>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 .accordion {
@@ -29,28 +37,17 @@
     overflow: hidden;
 }
 </style>
-<link rel="stylesheet" href="../css/header.css">
+
 </head>
 <body>
-<%- include("header.html") -%>
 
-<h1>
-C++ Code Examples:
-</h1>
-
-<p>
-Many examples of of C++ programs which cover concepts taught in classes at American River College.
-</p>
-
-<button class="accordion">
-
-<button class="accordion">Basic Program Examples</button>
+<button class="accordion">C++ Basics</button>
 <div class="panel">
 <p>
 These examples cover simple programs that are written in main().
 
 <h2>
-HELLO WORLD EXAMPLE
+Hello World Example
 </h2>
 <button id="hellur" onclick="openBlock(&quot;hello&quot;);
 changeHTML(&quot;hellur&quot;,&quot;OPEN&quot;, &quot;CLOSE&quot;)">
@@ -73,6 +70,205 @@ int main()
 </code>
 </div>
 
+<h2>
+Integer Variables
+</h2>
+<button id="intbutt" onclick="openBlock(&quot;INTS&quot;);
+changeHTML(&quot;intbutt&quot;,&quot;OPEN&quot;, &quot;CLOSE&quot;)">
+OPEN
+</button>
+
+<div id="INTS" style="display:none">
+<code>
+<pre class = "prettyprint">
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int main()
+{
+    //not given any value
+    //This variable can hold any value from within memory
+    int num;
+
+    //this will output "garbage," but will compile (but, not without warnings)
+    cout << num << endl;
+
+    /* We want to output values that we give variables though. */
+    num = 5;    //gives num the value of 5
+
+    //will output "5" to the screen
+    cout << num << endl;
+
+    /*
+    * Note that ints only hold negative whole #'s, positive whole #'s, and 0
+        - Any numbers with decimals will be rounded downwards (truncated).
+    */
+
+    num = 5.3;  //num == 5
+    num = 5.7;  //num == 5
+
+    /* We can do arithmetic with variables */
+    num = num + 5;  //adding 5 to num        (num == 10)
+    num = num - 7;  //subtracting 7 from num (num == 3)
+    num = num * 3;  //multiplying num by 3   (num == 9)
+    num = num / 4;  //dividing by 4          (num == 2)
+    num = num*num;  //squaring num           (num == 4)
+    num = num % 3;  //finding remainder (mod)(num == 1)
+    //Square roots require blocks of code called "functions."
+
+    //we can perform arithmetic with other variables as well.
+    int x = 3;
+    num = num + x;
+
+    //these next two lines are equivalent lines of code
+    num = num * x;
+    num *= x;   //simple
+
+    return 0;
+}
+</pre>
+</code>
+</div>
+
+<h2>
+Other Variables
+</h2>
+<button id="otherVarsExButt" onclick="openBlock(&quot;otherVarsEx&quot;);
+changeHTML(&quot;otherVarsExButt&quot;,&quot;OPEN&quot;, &quot;CLOSE&quot;)">
+OPEN
+</button>
+
+<div id="otherVarsEx" style="display:none">
+<code>
+<pre class = "prettyprint">
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int main()
+{
+    //doubles and floats are similar, but doubles are much more precise
+    double x = 5.15;
+    float y = 10.5;
+
+    /* We can perform similar arithmetic as we did with ints */
+    x += y; //x = x+y
+    cout << x << endl;
+
+    //char (character) variables hold ascii code (interpreted as letters)
+    //We typically give chars 'a', '1', '!' letter values
+    char c = 'g';
+
+    cout << "c: " << c << endl;
+
+    /*
+    * Remember that -although it looks like they store letters- char variables
+      actually hold numbers.
+        - They are small ints interpreted as letters.
+        - The ints are converted into ascii code (48 == '0', 65 == 'A')
+    */
+
+    //we can find the number value of 'g' by "casting" c to an int
+    cout << "ASCII: " << (int)c << endl;
+
+    /*
+    * Casting can be useful in situations in which you need to convert
+    between data types.
+
+    * It doesn't change the value of the variable, but displays it as whatever
+    data type is specified within the parentheses.
+
+    * You can also use casting for assignment:
+    */
+
+    int whole = (int)c; //although the casting isn't needed
+    int whole2 = c;
+
+    //they will be the same
+    cout << "whole: " << whole << " whole2: " << whole2 << endl;
+
+    /* Casting is more useful when converting between doubles and ints */
+
+    double wholeHalfBad = whole/2;          //this will be left as a whole #
+    double wholeHalfGood = (double)whole/2;
+
+    cout << "wholeHalfBad: " << wholeHalfBad << " wholeHalfGood: ";
+    cout << wholeHalfGood << endl;
+
+    c += 12; //valid
+    cout << "c: " << c << endl;
+
+    /* for variables to hold groups of chars, we can use "string" variables */
+    //note how we are using double quotes for string values:
+    string s = "Jim";
+
+    s = s+c;
+
+    cout << "string(s) value: " << s << endl;
+
+    //strings are apart of the standard library, and are a class
+    return 0;
+}
+</pre>
+</code>
+</div>
+
+<h2>
+Arrays
+</h2>
+<button id="arrButt" onclick="openBlock(&quot;arrEx&quot;);
+changeHTML(&quot;arrButt&quot;,&quot;OPEN&quot;, &quot;CLOSE&quot;)">
+OPEN
+</button>
+
+<div id="arrEx" style="display:none">
+<code>
+<pre class = "prettyprint">
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int main()
+{
+    //arrays can hold multiple variables
+    int x[5] = {1,2,3,4,5};
+
+    /* x has 5 spots open, and you can access each one with x[n] */
+    //0 is the first spot in memory
+    int y = x[0];   //y == 1
+
+    /* We can also change variables held by x */
+    //4 is actually the fifth element in this case
+    x[4] *= 2;  //x[4] == 10
+
+    /*
+    * Each element, when accessing, is always 1 less than the number we use
+    for accessing the array.
+        - x[3] is the 4th element, x[1] is the 2nd element, etc...
+
+    * We have to watch out for this when writing loops to traverse through
+    arrays for this reason
+    */
+
+    //note how we don't use i <= 5 for the check
+    for(int i = 0; i < 5; i++)
+    {
+        cout << x[i] << endl;
+    }
+
+    /* the loop will exit before i == 5 */
+
+    /* We can make arrays out of different data types: */
+    double arrDub[3] = {3.5, 3.9, 2.4};
+    char arrChar[3] = {'B', 'o', 'b'};
+
+    return 0;
+}
+</pre>
+</code>
+</div>
+
 </p>
 </div>
 
@@ -82,7 +278,7 @@ int main()
 These examples cover how functions can be used in programs.
 
 <h2>
-BASIC FUNCTIONS EXAMPLE
+Basic Functions Example
 </h2>
 
 <button id="baseFunc" onclick="openBlock(&quot;myDIV&quot;);
@@ -140,6 +336,60 @@ int numSquare(int x)
 </pre>
 </code>
 </div>
+<h2>
+Modding and Dividing To Find Single Digits
+</h2>
+
+<button id="digModDiv" onclick="openBlock(&quot;digModDivEx&quot;);
+changeHTML(&quot;digModDiv&quot;,&quot;OPEN&quot;, &quot;CLOSE&quot;)">
+OPEN
+</button>
+
+<div id="digModDivEx" style="display:none">
+<code>
+<pre class = "prettyprint">
+#include &lt;iostream&gt;
+
+using namespace std;
+
+void print(int[], int);
+
+int main()
+{
+    //we start with our large number:
+    int x = 46373;
+
+    /*
+    * We can distribute each digit of this number to 5 different variables
+    by modding.
+    */
+
+    int digits[5];
+
+    //We can use a for loop:
+    for(int i = 4, n = 10; i >= 0; i--)
+    {
+        digits[i] = (x % n);    //cuts off left-most digits
+        digits[i] /= (n / 10);  //cuts off the right-most digits
+        /* We are left with 1 value in the center put into digits[i] */
+
+        n *= 10;
+    }
+
+    print(digits, 5);
+
+    return 0;
+}
+
+void print(int digits[], int amnt)
+{
+    for(int i = 0; i < amnt; i++)
+        cout << digits[i] << " ";
+    cout << endl;
+}
+</pre>
+</code>
+</div>
 
 </p>
 </div>
@@ -150,7 +400,7 @@ int numSquare(int x)
 These examples cover how classes can be used in programs.
 
 <h2>
-BASIC CLASS EXAMPLE
+Basic Class Example
 </h2>
 
 <button id="classButt" onclick="openBlock(&quot;classes&quot;);
