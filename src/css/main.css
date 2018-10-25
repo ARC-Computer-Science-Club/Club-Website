@@ -1,0 +1,11 @@
+h1, h2, h3, h4, h5, h6 {
+  color: 	lime;
+  font-family: 'Fira Mono';
+}
+body {
+  margin: 0px;
+  background-color: #303030;
+  color: white;
+  font-family: monospace;
+  font-size: large;
+}
