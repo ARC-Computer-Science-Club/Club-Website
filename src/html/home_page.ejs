@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
+<title>home_page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <%- include("links.html") -%>
 
@@ -9,34 +14,65 @@
 <body>
 <%- include("header.html") -%>
 
-<!--write  small summary if the club-->
-<h1>Welcome to the Computer Science</h1>
-<p> Anyone can join in the Computer Sciene Club and learn the ways of coding.
-Coding isn't just one way, but it can be writen is many different ways and
-forms from all kinds of programs, With the codes, a wedside can we created,
-a robot can move, games can be made etc. </p>
-<!--examples of codes; pictures, past products, current project-->
+<div class="container">
+        <div class="row">
+          <div class="col-md-5">
+            <img src="CSC_logo.jpg" alt="C:\Users\Giselle\Desktop\club">
+          </div>
+          <div class="col-md-7">
+            <h1>Welcome to the Computer Science Club</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <h2>About Us</h2>
+            <p> Anyone can join in the Computer Sciene Club and learn the ways of coding.
+              Coding isn't just one way, but it can be writen is many different ways and
+              forms from all kinds of programs, With codes, a wedsite can be created,
+              a robot will move based on the code, games can be made etc.
+              Join the club to learn and build up your coding skills and make some  new
+              friends in the Computer Science Club.
+            <br>
+            Location:Room 311 in Tech Ed, in the Design Hub at ARC.
+            <br>
+            Time Meetings:Tuesday and Thursday at 12:00pm - 2:00pm.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <h3>PROJECTS</h3>
+            <h3>place Picture here</h3>
+            <p>....</p>
+          </div>
 
-<h2>contact</h2>
+          <div class="col-md-6">
+            <h3>EVENTS</h3>
+            <h3>place Picture here</h3>
+            <p>....</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <h2>President</h2>
+            <h3>President Picture </h3>
+            <h3>Devin</h3>
+            <p>Bio</p>
 
-
-<h2>examples</h2>
-
-
-<h2>Resources-</h2>
-
-
-
-<!--gather 3 people opinions about the club -->
-<h2>People's thought about the Club</h2>
-<p>
-
-<br>I think the club is really cool and you get to work with people who
-has more experince. You also get to do cool group project.
-<br>
--Artem
-<br>I don't like it, but I love it!!!
-<br> -Club President
-</p>
+          </div>
+          <div class="col-md-4">
+            <h2>Vice President</h2>
+            <h3>Vice President Picture </h3>
+            <h3>Name</h3>
+            <p>Bio</p>
+          </div>
+          <div class="col-md-4">
+            <h2>Treasure</h2>
+            <h3>Treasure Picture </h3>
+            <h3>Name</h3>
+            <p>Bio</p>
+          </div>
+        </div>
+      </div>
 </body>
 </html>
