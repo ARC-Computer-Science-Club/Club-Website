@@ -1,72 +1,71 @@
 <!DOCTYPE HTML>
 <HTML>
-<head>
-<title>CSC Website-Contact</title>
+  <head>
+    <title>CSC Website-Contact</title>
 
 
-<%- include("links.html") -%>
+    <%- include("links.html") -%>
 
-<link rel = "stylesheet" href = "../css/contact.css">
-</head>
+    <link rel = "stylesheet" href = "../css/contact.css">
+  </head>
 
-<body>
-<%- include("header.html") -%>
-
-
-<h1>Contact Info</h1>
-
-<div class = "container">
-<div class = "row">
-
-<div class = "col-md-8">
-<!-Input Headings will eventually appear inside box and disappear once you start typing->
-<form>
-  <fieldset>
-    <legend>Send us a message:</legend>
-
-    <input type = "text"
-           name = "firstname"
-           placeholder="First Name">
-    <br>
-    <br>
-    <input type = "text"
-           name = "lastname"
-           placeholder="Last Name">
-    <br>
-    <br>
-    <input type = "text"
-           name = "subject"
-           placeholder = "Subject">
-    <br>
-    <br>
-    <textarea cols = "40"
-              rows = "6"
-              style = "width:300px; height: 100px;"
-              class = "resize"
-              name = "usermessage"
-              placeholder="Message">
-    </textarea>
-    <br>
-    <input type = "submit"
-           value = "Send">
- </fieldset>
-</form>
-</div>
-
-<div class = "col-md-4">
-<ul>
-    <li><a target = "_blank" href = "https://discord.gg/q2mfHM5">Discord Invite Code</a></li>
-    <li><a href = "https://gitlab.com/ARC_Computer_Science_Club/">Gitlab Group</a></li>
-    <li><a href = "mailto:arccomputerscience@gmail.com">Club Email (Not Yet Active)</a></li>
-    <li>Room: Tech Ed 311</li>
-    <li>Meeting Times: Tuesdays and Thursdays 12 PM - 2 PM</li>
-</ul>
-</div>
-
-</div>
-</div>
+  <body>
+    <%- include("header.html") -%>
 
 
+    <h1>Contact Info</h1>
 
-</body>
+    <div class = "container">
+      <div class = "row">
+
+        <div class = "col-md-8">
+          <!-- Input Headings will eventually appear inside box and disappear once you start typing -->
+          <form>
+            <fieldset>
+              <legend>Send us a message:</legend>
+
+              <input type = "text"
+                     name = "firstname"
+                     placeholder="First Name">
+              <br>
+              <br>
+              <input type = "text"
+                     name = "lastname"
+                     placeholder="Last Name">
+              <br>
+              <br>
+              <input type = "text"
+                     name = "subject"
+                     placeholder = "Subject">
+              <br>
+              <br>
+              <textarea cols = "40"
+                        rows = "6"
+                        style = "width:300px; height: 100px;"
+                        class = "resize"
+                        name = "usermessage"
+                        placeholder="Message"></textarea>
+              <br>
+              <input type = "submit"
+                     value = "Send">
+            </fieldset>
+          </form>
+        </div>
+
+        <div class = "col-md-4">
+          <ul>
+            <li><a target = "_blank" href = "https://discord.gg/q2mfHM5">Discord Invite Code</a></li>
+            <li><a target = "_blank" href = "https://gitlab.com/ARC_Computer_Science_Club/">Gitlab Group</a></li>
+            <li style="display:none"><a href = "mailto:arccomputerscience@gmail.com">Club Email (Not Yet Active)</a></li>
+            <li>Room: Tech Ed 311</li>
+            <li>Meeting Times: Tuesdays and Thursdays 12 PM - 2 PM</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+
+
+  </body>
 </HTML>

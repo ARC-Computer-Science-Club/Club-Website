@@ -1,79 +1,98 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8"/>
-    <title>Home_page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <title>HomePage</title>
+
+    <%- include('links.html') %>
+
+    <link rel="stylesheet" href="/css/home_page.css">
 
   </head>
   <body>
-    <div class="container" style="position:relative; TOP:12px;">
+
+    <%- include('header.html') %>
+
+    <div class="container">
       <div class="row">
-        <div class="col-md-4"style="position:relative; TOP:6px;">
-          <img src="https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/45145371_1982669558467263_4448947139191504896_n.jpg?_nc_cat=102&_nc_ht=scontent-lax3-1.xx&oh=8044e86371a81b3987f0874cf5cc85ca&oe=5C75F075"
-          alt="Guys with computers" width="281.25" height="208.125">
-        </div>
-        <div class="col-md-8">
-          <h3 style="align:middle;">Welcome to the Computer Science Club</h3>
-          <p>
-            <h2>About Us</h2>
-          Learn new ways to code with our club's computer science students as
-          we give you some tips on problems with your code. Anyone can join the
-          computer science club (even if you are a beginner as a programmer). If you join
-          our club, you can also help us develop our website, and we can help you on some of your
-          homework assignments or projects you may be working on.
-          Make some friends and build up on your coding skills with the computer
-          science club today!
-          <h6>
-          <br>
-          Location: Room 311 in Tech Ed, in the Design Hub at ARC.
-          <br>
-          Time Meetings: Tuesday and Thursday from 12:00pm - 2:00pm.
-          </p>
-        </h6>
-        </div>
-      </div>
-      <div class="row" style="position:relative; TOP:24px;">
-        <div class="col-md-6">
-          <h3>PROJECTS</h3>
-          <h3>place Picture here</h3>
-          <p>....</p>
+
+        <div class="col-md-12">
+          <h1>Welcome to the Computer Science Club</h1>
         </div>
 
-        <div class="col-md-6">
-          <h3>EVENTS</h3>
-          <h3>place Picture here</h3>
-          <p>....</p>
+      </div>
+
+
+      <div class="row">
+
+        <div class="col-md-12">
+          <h3>About Us</h3>
+          <p>
+            Learn new ways to code with our club's computer science students as
+            we give you some tips on problems with your code. Anyone can join the
+            computer science club (even if you are a beginner as a programmer). If you join
+            our club, you can also help us develop our website, and we can help you on some of your
+            homework assignments or projects you may be working on.
+            Make some friends and build up on your coding skills with the computer
+            science club today!
+          </p>
+          <p>
+            Location: Room 311 in Tech Ed, in the Design Hub at ARC.
+          </p>
+          <p>
+            Time Meetings: Tuesday and Thursday from 12:00pm - 2:00pm.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-12">
+          <h1>Club Officers</h1>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-6"></div>
-        <div class="col-md-6"></div>
-      </div>
-      <div class="row" style="position:relative; TOP:24px;">
+
+
+      <div class="row text-center">
+
         <div class="col-md-4">
           <h2>President</h2>
-          <h3>President Picture </h3>
-          <h3>Name</h3>
+
+          <div class="col-md-12">
+            <img class="profile_picture" alt="Presidents Profile Picture" src="/static/Profile_avatar_placeholder_large.png"/>
+          </div>
+
+          <h4>Devin Scholl</h4>
           <p>Bio</p>
         </div>
+
         <div class="col-md-4">
           <h2>Vice President</h2>
-          <h3>Vice President Picture </h3>
-          <h3>Name</h3>
+
+          <div class="col-md-12">
+            <img class="profile_picture" alt="Vice President's Profile Picture" src="/static/Profile_avatar_placeholder_large.png"/>
+          </div>
+
+          <h4>Tristan Burns</h4>
           <p>Bio</p>
         </div>
+
         <div class="col-md-4">
           <h2>Treasure</h2>
-          <h3>Treasure Picture</h3>
-          <h3>Name</h3>
+
+          <div class="col-md-12">
+            <img class="profile_picture" alt="Treasure's Profile Picture" src="/static/Profile_avatar_placeholder_large.png"/>
+          </div>
+
+          <h4>Fabian R</h4>
           <p>Bio</p>
         </div>
+
       </div>
+
+
     </div>
   </body>
 </html>
