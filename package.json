@@ -2,15 +2,18 @@
     "name": "club_website",
     "version": "0.0.1",
     "description": "Official website for the ARC Computer Science Club",
-    "main": "main.js",
+    "main": "server.js",
     "scripts": {
+        "all": "npm run build && npm run start",
+        "start": "node server.js",
+        "build": "make clean && make",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
         "type": "git",
         "url": "git+ssh://git@gitlab.com/ARC_Computer_Science_Club/club_website.git"
     },
-    "author": "",
+    "author": "Computer Science Club Web-Dev Team",
     "license": "MIT",
     "bugs": {
         "url": "https://gitlab.com/ARC_Computer_Science_Club/club_website/issues"

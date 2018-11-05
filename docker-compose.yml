@@ -1,8 +1,9 @@
 version: "3"
 services:
   node:
-    image: "node:carbon"
+    build: ./image
     working_dir: /home/node/app
+    restart: always
     environment:
       - NODE_ENV=production
     volumes:
@@ -11,4 +12,4 @@ services:
       - "8080"
     ports:
       - "8080:8080"
-    command: "npm start"
+    command: "npm run all"
