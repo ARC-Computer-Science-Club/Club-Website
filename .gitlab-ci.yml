@@ -33,7 +33,7 @@ deploy:
     - chmod 700 ~/.ssh
 
   script:
-    - ssh -o StrictHostKeyChecking=no website_runner@arccsc.club "cd club_website && docker-compose down && git pull && git checkout $CI_COMMIT_SHA && docker-compose up -d"
+    - ssh -o StrictHostKeyChecking=no website_runner@arccsc.club "cd club_website && docker-compose down && git pull && docker-compose up -d"
 
   dependencies:
     - build
