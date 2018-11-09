@@ -6,14 +6,9 @@ build:
   stage: build
   script:
     - apt-get update
-    - apt-get install -y build-essential nodejs
+    - apt-get install -y build-essential nodejs npm
     - npm run build
 
-  artifacts:
-    expire_in: 1 week
-    paths:
-      - node_modules/
-      - build/
   only:
     - master
 
@@ -43,7 +38,7 @@ deploy:
     - docker-compose down
     - git pull
     - git checkout $CI_COMMIT_SHA
-    - docker-compose up
+    - docker-compose up -d
 
   dependencies:
     - build
