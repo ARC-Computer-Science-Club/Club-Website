@@ -5,8 +5,8 @@
     "main": "server.js",
     "scripts": {
         "all": "npm run build && npm run start",
+        "build": "npm i && make clean && make",
         "start": "node server.js",
-        "build": "make clean && make",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
