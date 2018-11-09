@@ -33,7 +33,7 @@ deploy:
     - chmod 700 ~/.ssh
 
   script:
-    - ssh website_runner@arccsc.club
+    - ssh -o StrictHostKeyChecking=no website_runner@arccsc.club
     - cd club_website
     - docker-compose down
     - git pull
