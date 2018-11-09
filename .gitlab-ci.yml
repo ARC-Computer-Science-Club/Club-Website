@@ -6,7 +6,7 @@ build:
   stage: build
   script:
     - apt-get update
-    - apt-get install -y build-essential node
+    - apt-get install -y build-essential nodejs
     - npm run build
 
   artifacts:
