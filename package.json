@@ -4,7 +4,7 @@
     "description": "Official website for the ARC Computer Science Club",
     "main": "server.js",
     "scripts": {
-        "all": "npm run build && npm run start",
+        "all": "npm i && npm run build && npm run start",
         "start": "node server.js",
         "build": "make clean && make",
         "test": "echo \"Error: no test specified\" && exit 1"
