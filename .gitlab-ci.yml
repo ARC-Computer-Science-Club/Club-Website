@@ -1,0 +1,7 @@
+stages:
+  - test
+
+job 1:
+  script: echo "pipeline test"
+  only:
+    - master
