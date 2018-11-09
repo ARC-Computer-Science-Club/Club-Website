@@ -3,6 +3,7 @@ stages:
   - deploy
 
 build:
+  image: node:carbon
   stage: build
   script:
     - apt-get update
