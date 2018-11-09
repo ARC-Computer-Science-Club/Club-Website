@@ -6,10 +6,11 @@ services:
     restart: always
     environment:
       - NODE_ENV=production
+      - PORT=80
     volumes:
       - ./:/home/node/app
     expose:
-      - "8080"
+      - "80"
     ports:
-      - "8080:8080"
+      - "80:80"
     command: "npm run all"
