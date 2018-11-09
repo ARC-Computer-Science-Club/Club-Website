@@ -3,11 +3,10 @@ stages:
   - deploy
 
 build:
-  image: node:carbon
   stage: build
   script:
     - apt-get update
-    - apt-get install -y build-essential
+    - apt-get install -y build-essential node
     - npm run build
 
   artifacts:
