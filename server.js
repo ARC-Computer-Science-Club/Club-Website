@@ -12,7 +12,7 @@ var static_middleware = (path_to_static_files) => {
 
 
 app.use((req, res, next) => {
-    console.log("%s | %s | %s | %s | %s", req.headers.host, new Date().toString(), req.method, req.url, req.headers['user-agent']);
+    console.log("%s | %s | %s | %s | %s", req.connection.remoteAddress, new Date().toString(), req.method, req.url, req.headers['user-agent']);
 	next();
 });
 
