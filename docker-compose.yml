@@ -1,16 +1,39 @@
 version: "3"
 services:
   node:
-    build: ./image
-    working_dir: /home/node/app
+    image: "node:dubnium"
     restart: always
     environment:
       - NODE_ENV=production
       - PORT=80
+    working_dir: /home/node/app
     volumes:
-      - ./:/home/node/app
-    expose:
-      - "80"
+      - ./:/home/node/app:ro
+    depends_on:
+      - redis
+      - postgres
     ports:
       - "80:80"
-    command: "npm run all"
+    networks:
+      - redis
+      - postgres
+    command: "npm start"
+
+  redis:
+    image: redis:5
+    networks:
+      - redis
+
+  postgres:
+    image: postgres:11
+    volumes:
+      - ./postgres.conf:/etc/postgresql/postgresql.conf:ro
+    environment:
+      - POSTGRES_PASSWORD=M75YE6XscWpG3AHt
+    networks:
+      - postgres
+
+
+networks:
+  redis:
+  postgres:
