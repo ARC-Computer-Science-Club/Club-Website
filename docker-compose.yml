@@ -21,6 +21,8 @@ services:
 
   redis:
     image: redis:5
+    volumes:
+      - redis_dbdata:/data
     networks:
       - redis
 
@@ -28,7 +30,7 @@ services:
     image: postgres:11
     volumes:
       - ./postgres.conf:/etc/postgresql/postgresql.conf:ro
-      - dbdata:/var/lib/postgresql/data
+      - postgres_dbdata:/var/lib/postgresql/data
     environment:
       - POSTGRES_PASSWORD=M75YE6XscWpG3AHt
     networks:
@@ -40,4 +42,6 @@ networks:
   postgres:
 
 volumes:
-  dbdata:
+  postgres_dbdata:
+  redis_dbdata:
+
