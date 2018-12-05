@@ -12,11 +12,13 @@ services:
     depends_on:
       - redis
       - postgres
+      - mongo
     ports:
       - "80:80"
     networks:
       - redis
       - postgres
+      - mongo
     command: "npm start"
 
   redis:
@@ -35,12 +37,22 @@ services:
     networks:
       - postgres
 
+  mongo:
+    # Be careful about the mongodb version
+    # See how their versioning system works to understand why
+    image: mongo:4.0-xenial
+    volumes:
+      - mongo_dbdata:/data/db
+    env_file: secrets/mongo.env
+    networks:
+      - mongo
 
 networks:
   redis:
   postgres:
+  mongo:
 
 volumes:
   postgres_dbdata:
   redis_dbdata:
-
+  mongo_dbdata:
