@@ -28,6 +28,8 @@ services:
       - ./redis.conf:/etc/redis.conf
     networks:
       - redis
+    expose:
+      - "6379"
     command: "redis-server /etc/redis.conf"
 
   postgres:
@@ -38,6 +40,8 @@ services:
     env_file: secrets/postgres.env
     networks:
       - postgres
+    expose:
+      - "5432"
 
   mongo:
     # Be careful about the mongodb version
@@ -48,6 +52,8 @@ services:
     env_file: secrets/mongo.env
     networks:
       - mongo
+    expose:
+      - "27017"
 
 networks:
   redis:
