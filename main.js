@@ -1,16 +1,6 @@
 // changes working directory of the process to the directory this file is in
 process.chdir(__dirname);
 
-// allows for multiple secrets files but only one can be used at a time
-const SECRETS_FILE = process.env.SECRETS_FILE || 'secrets.js';
-
-// set environmental variables using the key value pairs in the secrets file
-const secrets = require(`./${SECRETS_FILE}`);
-for (var key in secrets)
-{ // Set environmental variables before anything else
-    process.env[key] = secrets[key];
-}
-
 //-------------------------------------------------------------------------------
 
 const express      = require('express');

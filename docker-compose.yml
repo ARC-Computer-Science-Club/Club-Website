@@ -5,6 +5,7 @@ services:
     environment:
       - NODE_ENV=production
       - PORT=80
+    env_file: secrets/node.env
     working_dir: /home/node/app
     volumes:
       - ./:/home/node/app:ro
@@ -30,8 +31,7 @@ services:
     volumes:
       - ./postgres.conf:/etc/postgresql/postgresql.conf:ro
       - postgres_dbdata:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_PASSWORD=M75YE6XscWpG3AHt
+    env_file: secrets/postgres.env
     networks:
       - postgres
 
