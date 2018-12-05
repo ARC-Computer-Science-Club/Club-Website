@@ -3,6 +3,12 @@ const express = require('express');
 const router = express.Router();
 
 
+// cache static resources on the client
+router.use((req, res, next) => {
+    res.set('Cache-Control', `max-age=${60 * 60}`); //1 hour
+    next();
+});
+
 // css
 router.use('/css', express.static('build/css/complete'));
 

@@ -75,7 +75,6 @@ app.use(compression());
 // remove default header
 app.use((req, res, next) => {
     res.removeHeader('X-Powered-By');
-    res.setHeader('Cache-Control', 600);
     next();
 });
 
@@ -83,6 +82,9 @@ app.use((req, res, next) => {
 
 // Default file
 app.get('/', (req, res, next) => {
+    // cache on client
+    res.set('Cache-Control', `max-age=${60 * 60}`); //1 hour
+
     res.sendFile('/build/html/complete/home.html', {root: __dirname});
 });
 
