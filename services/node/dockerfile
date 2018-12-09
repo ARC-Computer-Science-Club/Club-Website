@@ -5,17 +5,27 @@ RUN apt update -y && apt install -y make python3 nodejs npm
 RUN mkdir /app
 WORKDIR /app
 
+# Install node packages first
 COPY ./package.json ./
 COPY ./package-lock.json ./
 RUN npm i
 
+# Build Source Code
 COPY ./helpers ./helpers
 COPY ./makefile ./
-COPY ./main.js ./
 COPY ./src ./src
 RUN make && rm -rf src makefile helpers
 
+# Copy the node entrypoint
+COPY ./main.js ./
+
 
 FROM node:dubnium
+
+# Copy /app directory from previous image
 COPY --from=BUILD /app /app
+
 WORKDIR /app
+
+# Default Command
+CMD ["npm", "start"]

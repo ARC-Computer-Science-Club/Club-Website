@@ -32,6 +32,6 @@
   },
   "devDependencies": {
     "coffeescript": "^2.3.2",
-    "sass": "^1.14.2"
+    "sass": "^1.15.2"
   }
 }
