@@ -1,0 +1,3 @@
+# Be careful about the mongodb version
+# See how their versioning system works to understand why
+FROM mongo:4.0-xenial

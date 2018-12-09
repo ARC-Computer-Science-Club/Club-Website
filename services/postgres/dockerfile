@@ -1,0 +1,2 @@
+FROM postgres:11
+COPY postgres.conf /etc/postgresql/postgresql.conf

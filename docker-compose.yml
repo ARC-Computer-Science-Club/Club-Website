@@ -1,10 +1,9 @@
 version: "3"
 services:
   node:
-    image: "node:csc"
+    image: node:csc
     build:
-      context: ./
-      dockerfile: node_dockerfile.txt
+      context: ./services/node
     environment:
       - NODE_ENV=production
       - PORT=80
@@ -22,10 +21,11 @@ services:
     command: "npm start"
 
   redis:
-    image: redis:5
+    image: redis:csc
+    build:
+      context: ./services/redis
     volumes:
       - redis_dbdata:/data
-      - ./redis.conf:/etc/redis.conf:ro
     networks:
       - redis
     expose:
@@ -33,9 +33,10 @@ services:
     command: "/usr/local/bin/redis-server /etc/redis.conf"
 
   postgres:
-    image: postgres:11
+    image: postgres:csc
+    build:
+      context: ./services/postgres
     volumes:
-      - ./postgres.conf:/etc/postgresql/postgresql.conf:ro
       - postgres_dbdata:/var/lib/postgresql/data
     env_file: secrets/postgres.env
     networks:
@@ -44,9 +45,9 @@ services:
       - "5432"
 
   mongo:
-    # Be careful about the mongodb version
-    # See how their versioning system works to understand why
-    image: mongo:4.0-xenial
+    image: mongo:csc
+    build:
+      context: ./services/mongo
     volumes:
       - mongo_dbdata:/data/db
     env_file: secrets/mongo.env
