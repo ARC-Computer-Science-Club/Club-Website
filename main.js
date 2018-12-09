@@ -11,7 +11,7 @@ const url          = require('url');
 const ejs          = require('ejs');
 const bodyParser   = require('body-parser');
 const cookieParser = require('cookie-parser');
-const session      = require('./src/server/js/controller/sessions.js');
+const session      = require('./build/server/js/controller/sessions.js');
 
 const app = express();
 const port = process.env.PORT || 8080;

@@ -1,0 +1,21 @@
+FROM ubuntu:bionic AS BUILD
+
+RUN apt update -y && apt install -y make python3 nodejs npm
+
+RUN mkdir /app
+WORKDIR /app
+
+COPY ./package.json ./
+COPY ./package-lock.json ./
+RUN npm i
+
+COPY ./helpers ./helpers
+COPY ./makefile ./
+COPY ./main.js ./
+COPY ./src ./src
+RUN make && rm -rf src makefile helpers
+
+
+FROM node:dubnium
+COPY --from=BUILD /app /app
+WORKDIR /app
