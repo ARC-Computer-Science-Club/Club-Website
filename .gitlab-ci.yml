@@ -21,7 +21,7 @@ deploy:
     - chmod 700 ~/.ssh
 
   script:
-    - ssh -o StrictHostKeyChecking=no website_runner@arccsc.club "cd club_website && docker-compose down && git pull && docker-compose build && docker-compose up -d"
+    - ssh -o StrictHostKeyChecking=no website_runner@arccsc.club "cd club_website && docker-compose down && git pull && docker-compose build && docker-compose up -d && sleep 10 && curl localhost/healthcheck"
 
   only:
     - master

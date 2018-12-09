@@ -89,6 +89,13 @@ app.use('/static', static_content);
 
 //-------------------------------------------------------------------------------
 
+// Returns 200 OK if everything is ok
+app.get('/healthcheck', (req, res) => {
+    res.sendStatus(200);
+});
+
+//-------------------------------------------------------------------------------
+
 // For login and signup logic
 const auth = require('./build/server/js/view/auth.js');
 app.use('/auth', auth);

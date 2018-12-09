@@ -25,12 +25,12 @@ services:
     image: redis:5
     volumes:
       - redis_dbdata:/data
-      - ./redis.conf:/etc/redis.conf
+      - ./redis.conf:/etc/redis.conf:ro
     networks:
       - redis
     expose:
       - "6379"
-    command: "redis-server /etc/redis.conf"
+    command: "/usr/local/bin/redis-server /etc/redis.conf"
 
   postgres:
     image: postgres:11
