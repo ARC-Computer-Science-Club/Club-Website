@@ -1,26 +1,37 @@
 {
-    "name": "club_website",
-    "version": "0.0.1",
-    "description": "Official website for the ARC Computer Science Club",
-    "main": "server.js",
-    "scripts": {
-        "all": "npm run build && npm run start",
-        "build": "npm i && make clean && make",
-        "start": "node server.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+ssh://git@gitlab.com/ARC_Computer_Science_Club/club_website.git"
-    },
-    "author": "Computer Science Club Web-Dev Team",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://gitlab.com/ARC_Computer_Science_Club/club_website/issues"
-    },
-    "homepage": "https://gitlab.com/ARC_Computer_Science_Club/club_website#readme",
-    "dependencies": {
-        "ejs-cli": "^2.0.1",
-        "express": "^4.16.3"
-    }
+  "name": "club_website",
+  "version": "0.0.1",
+  "description": "Official website for the ARC Computer Science Club",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/ARC_Computer_Science_Club/club_website.git"
+  },
+  "author": "Computer Science Club Web-Dev Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/ARC_Computer_Science_Club/club_website/issues"
+  },
+  "homepage": "https://gitlab.com/ARC_Computer_Science_Club/club_website#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.3.0",
+    "mongodb": "^3.1.10",
+    "pg": "^7.5.0",
+    "redis": "^2.8.0",
+    "request": "^2.88.0",
+    "uuidv4": "^2.0.0"
+  },
+  "devDependencies": {
+    "coffeescript": "^2.3.2",
+    "sass": "^1.14.2"
+  }
 }

@@ -1,16 +1,66 @@
 version: "3"
 services:
   node:
-    build: ./image
-    working_dir: /home/node/app
-    restart: always
+    image: "node:csc"
+    build:
+      context: ./
+      dockerfile: node_dockerfile.txt
     environment:
       - NODE_ENV=production
       - PORT=80
-    volumes:
-      - ./:/home/node/app
-    expose:
-      - "80"
+    env_file: secrets/node.env
+    depends_on:
+      - redis
+      - postgres
+      - mongo
     ports:
       - "80:80"
-    command: "npm run all"
+    networks:
+      - redis
+      - postgres
+      - mongo
+    command: "npm start"
+
+  redis:
+    image: redis:5
+    volumes:
+      - redis_dbdata:/data
+      - ./redis.conf:/etc/redis.conf
+    networks:
+      - redis
+    expose:
+      - "6379"
+    command: "redis-server /etc/redis.conf"
+
+  postgres:
+    image: postgres:11
+    volumes:
+      - ./postgres.conf:/etc/postgresql/postgresql.conf:ro
+      - postgres_dbdata:/var/lib/postgresql/data
+    env_file: secrets/postgres.env
+    networks:
+      - postgres
+    expose:
+      - "5432"
+
+  mongo:
+    # Be careful about the mongodb version
+    # See how their versioning system works to understand why
+    image: mongo:4.0-xenial
+    volumes:
+      - mongo_dbdata:/data/db
+    env_file: secrets/mongo.env
+    networks:
+      - mongo
+    expose:
+      - "27017"
+
+networks:
+  redis:
+  postgres:
+  mongo:
+
+volumes:
+  postgres_dbdata:
+  redis_dbdata:
+  mongo_dbdata:
