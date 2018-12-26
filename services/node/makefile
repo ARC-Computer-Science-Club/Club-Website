@@ -63,6 +63,17 @@ $(JS_BUILD_FILES): $(JS_SRC_FILES)
 	cp $(call changeroot,$(SRC_DIR),$@) $@
 
 
+## *.jsx
+JSX_SRC_DIR := $(SRC_DIR)js/
+JSX_SRC_FILES := $(shell find $(JSX_SRC_DIR) -type f -iname '*.jsx')
+JSX_BUILD_FILES := $(call changeroot,$(BUILD_DIR),$(JSX_SRC_FILES:.jsx=.js))
+
+# Copy .jsx files to the build directory
+$(JSX_BUILD_FILES): $(JSX_SRC_FILES)
+	mkdir -p $(dir $@)
+	node_modules/\@babel/cli/bin/babel.js --presets @babel/preset-react $(call changeroot,$(SRC_DIR),$@x) --out-file $@
+
+
 ## *.coffee
 COFFEE_SRC_DIR := $(SRC_DIR)js/
 COFFEE_SRC_FILES := $(shell find $(COFFEE_SRC_DIR) -type f -iname '*.coffee')
@@ -138,7 +149,7 @@ html: $(HTML_BUILD_FILES) $(EJS_BUILD_FILES)
 
 css: $(CSS_BUILD_FILES) $(SASS_BUILD_FILES)
 
-js: $(JS_BUILD_FILES) $(COFFEE_BUILD_FILES)
+js: $(JS_BUILD_FILES) $(JSX_BUILD_FILES) $(COFFEE_BUILD_FILES)
 
 serverjs: $(SERVER_JS_BUILD_FILES) $(SERVER_COFFEE_BUILD_FILES)
 
