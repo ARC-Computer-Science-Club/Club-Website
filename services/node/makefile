@@ -71,7 +71,7 @@ JSX_BUILD_FILES := $(call changeroot,$(BUILD_DIR),$(JSX_SRC_FILES:.jsx=.js))
 # Copy .jsx files to the build directory
 $(JSX_BUILD_FILES): $(JSX_SRC_FILES)
 	mkdir -p $(dir $@)
-	node_modules/\@babel/cli/bin/babel.js --presets @babel/preset-react $(call changeroot,$(SRC_DIR),$@x) --out-file $@
+	node_modules/\@babel/cli/bin/babel.js --no-babelrc --presets=@babel/preset-react,@babel/preset-env $(call changeroot,$(SRC_DIR),$@x) --out-file $@
 
 
 ## *.coffee

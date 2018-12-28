@@ -2,6 +2,7 @@
   "name": "club_website",
   "version": "0.0.1",
   "description": "Official website for the ARC Computer Science Club",
+  "browserslist": "> 0.25%, not dead",
   "main": "main.js",
   "scripts": {
     "start": "node main.js",
@@ -33,11 +34,16 @@
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "coffeescript": "^2.3.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-scripts": "2.1.2",
-    "coffeescript": "^2.3.2",
     "sass": "^1.15.2"
   }
 }
